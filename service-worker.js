@@ -1,21 +1,20 @@
-const VERSION = '1.0.0';
-
+const CACHE_NAME = 'test-service-worker-offline-page';
 const PRECACHE_FILES = [
     './',
     './index.html',
     './offline.html',
+    './main.js',
 ];
 
 // -----------------------------------------------------------------------------
 
 self.addEventListener('install', (evt) => {
     console.log('Event: install', { evt });
-
     evt.waitUntil(handleInstall());
 });
 
 async function handleInstall() {
-    const cache = await caches.open(VERSION);
+    const cache = await caches.open(CACHE_NAME);
     await cache.addAll(PRECACHE_FILES);
     return self.skipWaiting();
 }
@@ -31,7 +30,7 @@ async function handleActivate(evt) {
     const request = evt.request;
     const isOffline = !navigator.onLine;
 
-    const cache = await caches.open(VERSION);
+    const cache = await caches.open(CACHE_NAME);
 
     if (isOffline) {
         return await cache.match(new Request('offline.html'));
