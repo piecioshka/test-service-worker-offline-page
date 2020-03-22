@@ -1,7 +1,5 @@
 # test-service-worker-offline-page
 
-[![dependencies](https://david-dm.org/piecioshka/test-service-worker-offline-page.svg)](https://github.com/piecioshka/test-service-worker-offline-page)
-
 :ledger: Testing `Service Worker` with building offline page
 
 ## Demo 🎉
