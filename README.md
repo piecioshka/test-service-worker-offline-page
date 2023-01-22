@@ -2,7 +2,7 @@
 
 :ledger: Testing `Service Worker` with building offline page
 
-## Demo 🎉
+## Preview 🎉
 
 <https://piecioshka.github.io/test-service-worker-offline-page>
 
